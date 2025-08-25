@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin: auto;
+        }
+       button{
+        margin-left: 30%;
+       }
+        td{
+            
+            gap:20px;
+        }
+        .wrapper{
+            background-color: rgb(16, 172, 219);
+            padding: 100px;
+        }
+        h1{
+            text-align: center;
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+       <marquee onmouseover="this.stop()" onmouseout="this.start()"><h1>WELCOME TO FRESHER'S WORLD!!!</h1></marquee> 
+        <table border="1">
+            <tr>
+                
+                <th colspan="2" style="text-align: center; font-size:xx-large">Registration Form</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>
+                    <select name="age" id="age">
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                       
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="pass" id="pass"></td>
+            </tr>
+            <tr>
+                <td>Re-enter Password</td>
+                <td><input type="text" name="re-pass" id="re-pass"></td>
+            </tr>
+           
+            <tr>
+                <td rowspan="5">Select Your Security Question</td>
+                
+            </tr>
+            
+           
+            <tr>
+                <td><input type="radio" name="sqstn" id="">What is your pet name?</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="sqstn" id="">Who is your best friend?</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="sqstn" id="">What is your favourite food?</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="sqstn" id="">Who is your favourite teacher</td>
+            </tr>
+            <tr>
+                <td>Answer Security Question</td>
+                <td><input type="text" name="sqn" id="sqn"></td>
+            </tr>
+            <tr>
+                <td>Email Id</td>
+                <td><input type="email" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>Language Known</td>
+                <td><input type="checkbox" name="malayalam" id="">Malayalam  <input type="checkbox" name="english" id="">English  <input type="checkbox" name="hindi" id="">Hindi</td>
+            </tr>
+            <tr>
+                <td rowspan="3">Phone Number</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="home-number-text" id="" value="Home" disabled> <input type="text" name="office-number-text" id="" value="Office" disabled></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="home-number" id=""> <input type="text" name="office-number" id=""></td>
+            </tr>
+            <tr>
+                <td>Upload CV</td>
+                <td><input type="file" name="cv" id=""></td>
+            </tr>
+            <tr>
+                <td class="btn-td"><button type="reset">RESET</button></td>
+                <td class="btn-td"><button type="submit">SUBMIT</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
