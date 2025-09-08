@@ -1,0 +1,12 @@
+.wrapper
+          {
+            max-width: 1000px;
+            padding-inline: 2rem;
+            
+          }
+          .title{
+            color: #fff;
+            text-align: center;
+            background: #04073b;
+            padding: 10px;
+          }

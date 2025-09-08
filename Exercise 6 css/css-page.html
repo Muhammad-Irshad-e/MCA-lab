@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+         
+          .hero-img{
+                height: 100vh;
+                background-size: cover;
+            }
+            .contents
+            {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 2rem;
+
+            }
+            .properties
+            {
+                color: #fff;
+                font-size: larger;
+                background: #04073b;
+                padding: 1rem;
+                height: 200px;
+                overflow-y: scroll;
+                scrollbar-width: none;
+                border-radius: 12px;
+            }
+            ul li{
+                width: 500px;
+            }
+            .extra{
+                height: 200px;
+                padding: 1rem;
+                color: #fff;
+                font-size: larger;
+                background: #007ce1;
+                overflow-y: scroll;
+                scrollbar-width: none;
+                border-radius: 12px;
+
+            }
+            .extra p{
+                width: 500px;
+                text-align: start;
+                
+            }
+    </style>
+</head>
+<body>
+    <div class="header">
+            <div class="title">
+                <h1>WELCOME TO THE WORLD OF CSS</h1>
+            </div>
+            <div class="hero">
+                <img class="hero-img" src="./images/CSS Blog Cover.svg" alt="">
+            </div>
+        </div>
+   
+        <div class="contents">
+            <div class="properties">
+
+                <h2>Properties of CSS</h2>
+                <ul>
+                    <li>CSS stands for Cascading Style Sheets</li>
+                    <li>CSS describes how HTML elements are to be displayed on screen, paper, or in other media</li>
+                    <li>CSS saves a lot of work. It can control the layout of multiple web pages all at once</li>
+                    <li>External stylesheets are stored in CSS files</li>
+                </ul>
+                
+            </div>
+            <div  class="extra">
+                <p>CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML or XML, including SVG, MathML, and XHTML.</p>
+                <p>CSS allows for the separation of content (HTML) from presentation (CSS), making web development more organized, maintainable, and efficient.</p>
+                <p>Features like media queries enable the creation of responsive designs that adapt to different screen sizes and devices, ensuring optimal viewing experiences across various platforms.</p>
+            </div>
+        </div>
+        
+</body>
+</html>
