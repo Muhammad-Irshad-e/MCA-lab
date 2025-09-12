@@ -6,19 +6,19 @@
     <title>CSS</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        
-         
-          .hero-img{
-                height: 100vh;
-                background-size: cover;
-            }
+        body{
+            margin: 0;
+        }
+           .hero-img{
+            object-fit: contain;
+           }
+          
             .contents
             {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 padding: 2rem;
-
             }
             .properties
             {
@@ -27,9 +27,12 @@
                 background: #04073b;
                 padding: 1rem;
                 height: 200px;
-                overflow-y: scroll;
-                scrollbar-width: none;
+                transition: 0.5s;
                 border-radius: 12px;
+            }
+            .properties:hover
+            {
+                transform: scale(0.9);
             }
             ul li{
                 width: 500px;
@@ -40,29 +43,90 @@
                 color: #fff;
                 font-size: larger;
                 background: #007ce1;
-                overflow-y: scroll;
-                scrollbar-width: none;
                 border-radius: 12px;
-
+                transition: .5s;
+            }
+            .extra:hover
+            {
+                transform: scale(0.9);
             }
             .extra p{
                 width: 500px;
                 text-align: start;
                 
             }
+            #footer
+            {
+                display: flex;
+                align-items: start;
+                justify-content: space-evenly;
+                padding: 2rem;
+                font-size: large;
+                height: 200px;
+                background: #04073b;
+                color: #fff;
+            }
+            .icon {
+                height: 10px;
+                color: #fff;
+            }
+            .icons ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                vertical-align: auto;
+            }
+            .address
+            {
+                margin-right: 50px;
+            }
+            svg{
+                vertical-align: middle;
+                margin-right: 5px;
+            }
     </style>
 </head>
 <body>
     <div class="header">
-            <div class="title">
-                <h1>WELCOME TO THE WORLD OF CSS</h1>
+            <div class="nav-bar">
+                <div class="title">
+                    <p>CCSweb</p>
+                </div>
+                <div class="menu">
+                    
+                    <div class="menu-list"><a href="" style="color: #007ce1;"><li>Home</li></a></div>
+                    <div class="menu-list"><a href=""><li>Feature</li></a></div>
+                    <div class="menu-list"><a href=""><li>About</li></a></div>
+                    
+                </div>
             </div>
             <div class="hero">
-                <img class="hero-img" src="./images/CSS Blog Cover.svg" alt="">
+                <div class="hero-text">
+                     <h1 style="color: #007ce1;">WELCOME </h1>
+                     <h2>TO THE WORLD OF CSS</h2>
+                     <div>
+                        <p style="font-size: large; color:#04073b">
+                            Explore The World Of CSS Now!
+                        </p>
+                        <button class="btn">EXPLORE NOW!</button>
+                     </div>
+                </div>
+                <div class="hero-pic">
+
+                    <img class="hero-img" src="./images/CSS Blog Cover.svg" alt="">
+                </div>
             </div>
         </div>
-   
+        <section id="features">
+        <div style="text-align: center; text-decoration: underline; color:#04073b;">
+            <h2>CSS Features</h2>
+
+        </div>
         <div class="contents">
+            
             <div class="properties">
 
                 <h2>Properties of CSS</h2>
@@ -70,16 +134,61 @@
                     <li>CSS stands for Cascading Style Sheets</li>
                     <li>CSS describes how HTML elements are to be displayed on screen, paper, or in other media</li>
                     <li>CSS saves a lot of work. It can control the layout of multiple web pages all at once</li>
-                    <li>External stylesheets are stored in CSS files</li>
                 </ul>
                 
             </div>
             <div  class="extra">
+                <h2>CSS (Cascading Style Sheets)</h2>
                 <p>CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML or XML, including SVG, MathML, and XHTML.</p>
-                <p>CSS allows for the separation of content (HTML) from presentation (CSS), making web development more organized, maintainable, and efficient.</p>
-                <p>Features like media queries enable the creation of responsive designs that adapt to different screen sizes and devices, ensuring optimal viewing experiences across various platforms.</p>
+           
+                
             </div>
         </div>
-        
+        </section>
+        <section id="history">
+            <div class="history-content">
+                <div class="history-text">
+                  <p>Cascading Style Sheets (CSS) was first proposed by Håkon Wium Lie on October 10, 1994, while he was working at CERN with Tim Berners-Lee. The initial motivation for CSS was to address the limitations of HTML in controlling the visual presentation of web documents. At the time, styling was either handled by individual browser implementations or through deprecated HTML tags like <font>, which mixed content and presentation. 
+Several other style sheet languages were proposed around the same period, but CSS gained prominence and became the standard. The World Wide Web Consortium (W3C) played a crucial role in its development and standardization.</p>
+                </div>
+                <div class="history-pic">
+                     <img src="images/css history.png" alt="" style="width: 500px;">
+                </div>
+            </div>
+        </section>
+       <section id="footer">
+         <div class="contact-details">
+            <div class="icons">
+                <ul>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="40" height="40" >
+  <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-.88a1.13 1.13 0 1 1-2.25 0 1.13 1.13 0 0 1 2.25 0z"/>
+</svg>@css_code</li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="30" height="30">
+  <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 
+  24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 
+  1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 
+  0-1.796.715-1.796 1.763v2.311h3.587l-.467 3.622h-3.12V24h6.116C23.403 
+  24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z"/>
+</svg> CssCode</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="30" height="30">
+  <path d="M18.244 2.25h3.308l-7.227 
+  8.26 8.502 11.24H16.17l-5.214-6.817-5.97 
+  6.817H1.678l7.73-8.835L1.254 2.25h7.007l4.713 
+  6.231 5.27-6.231zM16.568 19.477h1.833L7.62 
+  4.39H5.654l10.914 15.087z"/>
+</svg>
+CssCode</li>
+                </ul>
+            </div>
+         </div>
+         <div class="address">
+            <p>College of engineering trivandrum,sreekaryam,670693</p>
+            <p>cettrivandrum@gmail.com</p>
+            <p>04902394747</p>
+         </div>
+         
+       </section>
 </body>
 </html>

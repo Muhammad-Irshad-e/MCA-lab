@@ -4,9 +4,114 @@
             padding-inline: 2rem;
             
           }
-          .title{
+       
+          .hero{
+            display: flex;
+            justify-content: space-evenly;
+          }
+          .hero-text
+          {
+            padding-left: 5rem;
+            padding-top: 30px;
+            flex: .5;
+            color: #04073b;
+            font-size: larger;
+          }
+          .hero-pic{
+            width: 900px;
+            object-fit: cover;
+            flex: 1;
+          }
+          .nav-bar{
+             display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: row;
+            background-color: #fff;
+            color: #04073b;
+            margin-bottom: 30px;
+            border-radius: 40px;
+            margin-left: 20px;
+            margin-right:20px ;
+            margin-top: 10px;
+            box-shadow: 2px 2px 2px 2px rgba(8, 7, 90, 0.238);          }
+          .title
+          {
+            flex: 2;
+        }
+        .title p{
+          font-size: x-large;
+          font-weight: 900;
+          color: #04073b;
+          margin-left: 4rem;  
+
+        }
+          .menu
+          {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: row;
+            flex: 1;
+            
+          }
+          .menu-list
+          {
+
+            flex: 1;
+          }
+          .menu-list a{
+            text-decoration: none;
+            color:#04073b;
+          }
+          .menu-list li{
+            list-style-type: none;
+            display: inline;
+            text-decoration: none;
+
+
+          }
+          #features
+          {
+            margin-top: 100px;
+          }
+          .btn{
+            padding: 10px 15px;
+            background-color: #007ce1;
+            color:#fff ;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 1px solid #007ce1;
+          }
+          .btn:hover
+          {
+            transform: scale(0.9);
+          }
+          #history
+          {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #04073b;
             color: #fff;
-            text-align: center;
-            background: #04073b;
-            padding: 10px;
+            padding: 40px;
+            margin: 30px;
+            border-radius: 20px;
+            font-size: larger;
+          }
+          .history-content
+          {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+          .history-text
+          {
+            flex: 2;
+          }
+          .history-pic
+          {
+            flex:1;
+            object-fit: cover;
           }
