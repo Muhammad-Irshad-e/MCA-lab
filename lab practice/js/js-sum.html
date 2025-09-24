@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="clac">
+        <form >
+            <h1>Sum of two numbers</h1>
+
+            <label for="first">Enter First Number</label>
+            <input type="text" name="first" id="first">
+
+            <label for="second">Enter Second Number</label>
+            <input type="text" name="second" id="second">
+
+
+            <h1 id="Sum"></h1>
+
+           <button onclick="sum()">ADD</button>
+        </form>
+
+        
+    </div>
+    <script>
+            
+            function sum()
+            {
+                let x=parseInt(document.getElementById("first").value);
+                let y= parseInt(document.getElementById("second").value);
+                let z=x+y;
+                alert("Sum ="+z);
+           }
+    </script>
+</body>
+</html>

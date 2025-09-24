@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="math-div">
+        <h2>MATH FUNCTIONS</h2>
+
+        Enter a number<input type="number" id="mathIN">
+        <div class="btn">
+            <button onclick="mtpow()">POW</button>
+            <button onclick="mtsqrt()">SQRT</button>
+            <button onclick="mtabs()">ABS</button>
+            <button onclick="mtceil()">CIEL</button>
+            <button onclick="mtfloor()">FLOOR</button>
+            <button onclick="mtround()">ROUND</button>
+        </div>
+        <h2 id="mathOUT"></h2>
+    </div>
+    <div class="string-div">
+        <h2>STRING FUNCTIONS</h2>
+
+        Enter a String<input type="text" id="stringIN">
+        <div class="btn">
+            <button onclick="stlen()">LENGTH</button>
+            <button>SUBSTRING</button>
+            <button>toUPPER</button>
+            <button>toLOWER</button>
+            <button>CONCAT</button>
+            <button>TRIM</button>
+        </div>
+                <h2 id="stringOUT"></h2>
+
+    </div>
+
+
+
+    <script>
+        function mtpow()
+        {
+            let v=parseFloat(document.getElementById("mathIN").value);
+            let p=prompt("Enter the power");
+            x=Math.pow(v,p);
+            document.getElementById("mathOUT").innerHTML=x;
+        }
+        function mtsqrt()
+        {
+            let v=parseFloat(document.getElementById("mathIN").value);
+            
+            x=Math.sqrt(v);
+            document.getElementById("mathOUT").innerHTML=x;
+        }
+        function mtabs()
+        {
+            let v=parseFloat(document.getElementById("mathIN").value);
+            
+            x=Math.abs(v);
+            document.getElementById("mathOUT").innerHTML=x;
+        }
+        function mtceil()
+        {
+            let v=parseFloat(document.getElementById("mathIN").value);
+            
+            x=Math.ceil(v);
+            document.getElementById("mathOUT").innerHTML=x;
+        }
+        function mtfloor()
+        {
+            let v=parseFloat(document.getElementById("mathIN").value);
+            
+            x=Math.floor(v);
+            document.getElementById("mathOUT").innerHTML=x;
+        }
+         function mtround()
+        {
+            let v=parseFloat(document.getElementById("mathIN").value);
+            
+            x=Math.round(v);
+            document.getElementById("mathOUT").innerHTML=x;
+        }
+
+
+        function stlen()
+        {
+            let v=document.getElementById("stringIN").value;
+            document.getElementById("stringOUT").innerHTML=v.length;
+
+        }
+    </script>
+</body>
+</html>

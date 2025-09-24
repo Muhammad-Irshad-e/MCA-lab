@@ -8,6 +8,7 @@
     <style>
         body{
             margin: 0;
+            background-color: #04073b;
         }
            .hero-img{
             object-fit: contain;
@@ -29,6 +30,8 @@
                 height: 200px;
                 transition: 0.5s;
                 border-radius: 12px;
+                box-shadow: 0 5px 35px rgba(18, 129, 203, 0.6);
+
             }
             .properties:hover
             {
@@ -42,9 +45,10 @@
                 padding: 1rem;
                 color: #fff;
                 font-size: larger;
-                background: #007ce1;
+                background: #04073b;
                 border-radius: 12px;
                 transition: .5s;
+                box-shadow: 0 5px 35px rgba(18, 129, 203, 0.6);
             }
             .extra:hover
             {
@@ -55,6 +59,15 @@
                 text-align: start;
                 
             }
+            #home-li
+            {
+               color: #007ce1;
+              
+            }
+            #home-li:hover
+            {
+                color: #fff;
+            }
             #footer
             {
                 display: flex;
@@ -63,9 +76,10 @@
                 padding: 2rem;
                 font-size: large;
                 height: 200px;
-                background: #04073b;
+                background: #06094e;
                 color: #fff;
             }
+            
             .icon {
                 height: 10px;
                 color: #fff;
@@ -97,7 +111,7 @@
                 </div>
                 <div class="menu">
                     
-                    <div class="menu-list"><a href="" style="color: #007ce1;"><li>Home</li></a></div>
+                    <div class="menu-list" ><a href=""  id="home-li"><li>Home</li></a></div>
                     <div class="menu-list"><a href=""><li>Feature</li></a></div>
                     <div class="menu-list"><a href=""><li>About</li></a></div>
                     
@@ -108,7 +122,7 @@
                      <h1 style="color: #007ce1;">WELCOME </h1>
                      <h2>TO THE WORLD OF CSS</h2>
                      <div>
-                        <p style="font-size: large; color:#04073b">
+                        <p style="font-size: large; color:#fff">
                             Explore The World Of CSS Now!
                         </p>
                         <button class="btn">EXPLORE NOW!</button>
@@ -121,11 +135,18 @@
             </div>
         </div>
         <section id="features">
-        <div style="text-align: center; text-decoration: underline; color:#04073b;">
+        <div style="text-align: center; text-decoration: underline; color:#fff;">
             <h2>CSS Features</h2>
 
         </div>
         <div class="contents">
+
+             <div  class="extra">
+                <h2>CSS (Cascading Style Sheets)</h2>
+                <p>CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML or XML, including SVG, MathML, and XHTML.</p>
+           
+                
+            </div>
             
             <div class="properties">
 
@@ -137,22 +158,18 @@
                 </ul>
                 
             </div>
-            <div  class="extra">
-                <h2>CSS (Cascading Style Sheets)</h2>
-                <p>CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML or XML, including SVG, MathML, and XHTML.</p>
            
-                
-            </div>
         </div>
         </section>
         <section id="history">
             <div class="history-content">
                 <div class="history-text">
-                  <p>Cascading Style Sheets (CSS) was first proposed by Håkon Wium Lie on October 10, 1994, while he was working at CERN with Tim Berners-Lee. The initial motivation for CSS was to address the limitations of HTML in controlling the visual presentation of web documents. At the time, styling was either handled by individual browser implementations or through deprecated HTML tags like <font>, which mixed content and presentation. 
+                  <h2>History of CSS</h2>
+                  <p>Cascading Style Sheets (CSS) was first proposed by Håkon Wium Lie on October 10, 1994, while he was working at CERN with Tim Berners-Lee. The initial motivation for CSS was to address the limitations of HTML in controlling the visual presentation of web documents. At the time, styling was either handled by individual browser implementations or through deprecated HTML tags like &lt; font &gt;, which mixed content and presentation. 
 Several other style sheet languages were proposed around the same period, but CSS gained prominence and became the standard. The World Wide Web Consortium (W3C) played a crucial role in its development and standardization.</p>
                 </div>
                 <div class="history-pic">
-                     <img src="images/css history.png" alt="" style="width: 500px;">
+                     <img src="images/css history.png" alt="" style="width: 300px; margin:20px;">
                 </div>
             </div>
         </section>
