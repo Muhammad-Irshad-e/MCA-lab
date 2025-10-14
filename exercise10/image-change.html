@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="image" style="width: 500px; margin:auto;">
+        
+    </div>
+
+     <script>
+        let image = "<img src=\"imgs/grey.png\" width=\"500\">"
+        document.getElementById('image').innerHTML=image;
+        document.getElementById('image').addEventListener("mouseover",myevent);
+        function myevent(){
+            image = "<img src=\"imgs/blackhole.jpg\" width=\"500\">"
+            document.getElementById('image').innerHTML=image;
+
+        }
+    </script>
+</body>
+</html>

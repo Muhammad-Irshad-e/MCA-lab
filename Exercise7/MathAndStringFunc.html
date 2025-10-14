@@ -26,11 +26,11 @@
         Enter a String<input type="text" id="stringIN">
         <div class="btn">
             <button onclick="stlen()">LENGTH</button>
-            <button>SUBSTRING</button>
-            <button>toUPPER</button>
-            <button>toLOWER</button>
-            <button>CONCAT</button>
-            <button>TRIM</button>
+            <button onclick="substring()">SUBSTRING</button>
+            <button onclick="strupper()">toUPPER</button>
+            <button onclick="strlower()">toLOWER</button>
+            <button onclick="strconcat()">CONCAT</button>
+            <button onclick="strtrim()">TRIM</button>
         </div>
                 <h2 id="stringOUT"></h2>
 
@@ -89,6 +89,40 @@
             document.getElementById("stringOUT").innerHTML=v.length;
 
         }
+        function substring()
+        {
+            let v=document.getElementById("stringIN").value;
+            let start=parseInt(prompt("Enter the starting index"));
+            let end=parseInt(prompt("Enter the substring length"));
+            document.getElementById("stringOUT").innerHTML=v.substr(start,end);
+
+        }
+        function strupper()
+        {
+            let v=document.getElementById("stringIN").value;
+            document.getElementById("stringOUT").innerHTML=v.toUpperCase();
+
+        }
+        function strlower()
+        {
+            let v=document.getElementById("stringIN").value;
+            document.getElementById("stringOUT").innerHTML=v.toLowerCase();
+
+        }
+        function strconcat()
+        {
+            let v=document.getElementById("stringIN").value;
+            let extra=prompt("Enter the string to concatinate");
+
+            document.getElementById("stringOUT").innerHTML=v.concat(extra);
+
+        }
+        function strtrim(){
+            let v=document.getElementById("stringIN").value;
+            document.getElementById("stringOUT").innerHTML=v.trim();
+
+        }
     </script>
+
 </body>
 </html>

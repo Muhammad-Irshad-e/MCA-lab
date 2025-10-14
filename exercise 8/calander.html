@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="xyz" ></div>
+    <script>
+        let year = parseInt(prompt("Enter the Year:"));
+        let container = document.getElementById("xyz");
+
+        for (let month = 0; month < 12; month++) {
+            let c = new Date(year, month, 1); 
+            let firstDay = c.getDay(); 
+            let daysInMonth = new Date(year, month + 1, 0).getDate(); 
+
+            let d = "<h2>" + c.toLocaleString('default', { month: 'long' }) + " " + year + "</h2>";
+            d += "<table border='1'><tr><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th><th>SUN</th></tr><tr>";
+
+            for (let i = 0; i < firstDay; i++) {
+                d += "<td></td>";
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                d += "<td>" + day + "</td>";
+                if ((firstDay + day) % 7 === 0) {
+                    d += "</tr><tr>";
+                }
+            }
+
+           d += "</tr></table><br>";
+            container.innerHTML += d;
+        }
+    </script>
+</body>
+ </html>

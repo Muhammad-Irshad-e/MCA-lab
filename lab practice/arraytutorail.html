@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="xyz"></h2>
+    <h2 id="abc"></h2>
+
+    <script>
+        const cars = ["BMW","AUDI","FORD","BUGATTI"]
+        cars.push("HYUNDAI")
+        document.getElementById('xyz').innerText=cars.join("(-_-)");
+        let str="<ul>"
+        for(i=0;i<cars.length;i++){
+             str+="<li>"+cars[i]+"</li>";
+        }
+        str+="</ul>"
+        document.getElementById('abc').innerHTML=str
+    </script>
+</body>
+</html>
