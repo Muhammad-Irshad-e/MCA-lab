@@ -1,3 +1,4 @@
+#Area and Perimeter of a Circle
 import math
 radius = int(input("Enter the radius of the circle"))
 print("Area=",radius*radius*math.pi)

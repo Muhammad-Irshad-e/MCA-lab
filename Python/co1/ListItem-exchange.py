@@ -1,3 +1,4 @@
+#Display first and last colors from a list of comma-separated color names
 str=input("Enter a list of colours seperated by commas")
 li=str.split(sep=",")
 n=len(li)

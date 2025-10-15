@@ -1,3 +1,4 @@
+#First n Multiples
 x=int(input("Enter the number"))
 n=int(input("Enter the no.of multiples"))
 for i in range(1,n+1):

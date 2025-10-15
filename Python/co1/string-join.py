@@ -1,4 +1,4 @@
-import string
+#Create a single string from two strings, swapping the characters at position 1
 str1 = input("Enter the first string:")
 str2 = input("Enter the second string:")
 

@@ -1,3 +1,4 @@
+#Number of digits
 n = int(input("Number:"))
 count=0
 while(n!=0):

@@ -1,3 +1,4 @@
+# From a list, create a list removing all even numbers
 n = int(input("Enter the no.of elements:"))
 list1 =[]
 for i in range(n):

@@ -1,3 +1,4 @@
+#To find the roots of a quadratic equations
 import math
 import cmath
 def root(a,b,c):
