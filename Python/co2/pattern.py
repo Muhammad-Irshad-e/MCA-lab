@@ -7,3 +7,9 @@ for i in range(n):
 
         print("*",end=" ")
     print()
+for k in range(n-1):
+    print(" "*(k+2)  ,end="")
+    print("* "*(n-1-k),end=" ")
+    
+    print()
+    
