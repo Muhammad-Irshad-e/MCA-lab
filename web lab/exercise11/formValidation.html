@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin: auto;
+        }
+       button{
+        margin-left: 30%;
+       }
+        td{
+            
+            gap:20px;
+        }
+        .wrapper{
+            background-color: rgb(16, 172, 219);
+            padding: 100px;
+        }
+        h1{
+            text-align: center;
+            color: crimson;
+        }
+        p{
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+       <marquee onmouseover="this.stop()" onmouseout="this.start()"><h1>WELCOME TO FRESHER'S WORLD!!!</h1></marquee> 
+       <form  action="" onsubmit="return validateForm()">
+        <table border="1">
+            <tr>
+                
+                <th colspan="2" style="text-align: center; font-size:xx-large">Registration Form</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" id="name" >
+                    <p id="name_valid" class="error_msg" ></p>
+                </td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>
+                    <input type="text" name="age" id="age" >
+                    <p id="age_valid" class="error_msg" ></p>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="pass" id="pass" >
+                <p id="pass_valid" class="error_msg" ></p>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>Re-enter Password</td>
+                <td><input type="password" name="re-pass" id="re-pass">
+                <p id="re-pass_valid" class="error_msg" ></p>
+            </td>
+                
+            </tr>
+           
+            <tr>
+                <td rowspan="5">Select Your Security Question</td>
+                
+            </tr>
+            
+           
+            <tr>
+                <td><input type="radio" name="sqstn" id="">What is your pet name?</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="sqstn" id="">Who is your best friend?</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="sqstn" id="">What is your favourite food?</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="sqstn" id="">Who is your favourite teacher</td>
+            </tr>
+            <tr>
+                <td>Answer Security Question</td>
+                <td><input type="text" name="sqn" id="sqn" placeholder="Answer"></td>
+            </tr>
+            <tr>
+                <td>Email Id</td>
+                <td><input type="email" name="email" id="email" placeholder="Email">
+                    <p id="email_valid" class="error_msg" ></p>
+                </td>
+            </tr>
+            <tr>
+                <td>Language Known</td>
+                <td><input type="checkbox" name="malayalam" id="">Malayalam  <input type="checkbox" name="english" id="">English  <input type="checkbox" name="hindi" id="">Hindi</td>
+            </tr>
+            <tr>
+                <td rowspan="3">Phone Number</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="home-number-text" id="" value="Home" disabled> <input type="text" name="office-number-text" id="" value="Office" disabled></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="home-number" id="home-number" placeholder="Home Number"> <input type="text" name="office-number" id="office-number" placeholder="Office Number"> <p id="Phone_valid" class="error_msg" ></p></td>
+            </tr>
+            <tr>
+                <td>Upload CV</td>
+                <td><input type="file" name="cv" id=""></td>
+            </tr>
+            <tr>
+                <td class="btn-td"><button type="reset">RESET</button></td>
+                <td class="btn-td"><button type="submit">SUBMIT</button></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    <script>
+
+        function clearErrors(){
+            document.getElementById("name_valid").style.display="none";
+            document.getElementById("age_valid").style.display="none";
+            document.getElementById("pass_valid").style.display="none";
+            document.getElementById("re-pass_valid").style.display="none";
+            document.getElementById("email_valid").style.display="none";
+            document.getElementById("Phone_valid").style.display="none";
+        }
+        function validateAge(){
+            var age=document.getElementById("age").value;
+            var agep = document.getElementById("age_valid");
+            if (age===""){
+                agep.style.display="block";
+                agep.innerText="Age cannot be empty.";
+                return false;
+            }
+            if(isNaN(age) ){
+                agep.style.display="block";
+                agep.innerText="Age must be a number.";
+                return false;
+            }
+            if (age<18 || age>50){
+                agep.style.display="block";
+                agep.innerText="Age must be between 18 and 50.";
+                return false;
+            }
+
+        }
+        function validateName(){
+            var name=document.getElementById("name").value;
+            var name_p=document.getElementById("name_valid");
+            var regex=/^[a-zA-Z ]+$/;
+            if(name ===""){
+                name_p.style.display="block";
+                name_p.innerText="Name cannot be empty.";
+                return false;
+            }
+            if(!regex.test(name)){
+                name_p.style.display="block";
+                name_p.innerText="Name can only contain letters and spaces.";
+                return false;
+            }
+            return true;
+        }
+        function validatePassword(){
+            var pass=document.getElementById("pass").value;
+            var rePass=document.getElementById("re-pass").value;
+            var pass_p=document.getElementById("pass_valid");
+            var rePass_p=document.getElementById("re-pass_valid");
+            if(pass.length<8){
+                pass_p.style.display="block";
+                pass_p.innerText="Password must be at least 8 characters long.";
+                return false;
+            }
+            if(pass!==rePass){
+                rePass_p.style.display="block";
+                rePass_p.innerText="Passwords do not match.";
+                return false;
+            }
+            return true;
+        }
+        function validateEmail(){
+            var email=document.getElementById("email").value;
+            var regex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var email_p=document.getElementById("email_valid");
+            if(!regex.test(email)){
+                email_p.style.display="block";
+                email_p.innerText="Please enter a valid email address.";
+                return false;
+            }
+            return true;
+        }
+        function validatePhoneNumber(){
+            var homeNumber=document.getElementById("home-number").value;
+            var officeNumber=document.getElementById("office-number").value;
+            var regex=/^\d{10}$/;
+            var phone_p=document.getElementById("Phone_valid");
+            if(homeNumber ==="" && officeNumber===""){
+                phone_p.style.display="block";
+                phone_p.innerText="At least one phone number must be provided.";
+                return false;
+            }
+            if(homeNumber && !regex.test(homeNumber)){
+                phone_p.style.display="block";
+                phone_p.innerText="Please enter a valid 10-digit home phone number.";
+                return false;
+            }
+            if(officeNumber && !regex.test(officeNumber)){
+                phone_p.style.display="block";
+                phone_p.innerText="Please enter a valid 10-digit office phone number.";
+                return false;
+            }
+            return true;
+        }
+        function validateForm(){
+            clearErrors();
+            if(!validateName() || !validateAge() || !validatePassword() || !validateEmail() || !validatePhoneNumber() ){
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
