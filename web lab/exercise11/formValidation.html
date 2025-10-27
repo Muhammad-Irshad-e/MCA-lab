@@ -90,7 +90,7 @@
             </tr>
             <tr>
                 <td>Email Id</td>
-                <td><input type="email" name="email" id="email" placeholder="Email">
+                <td><input type="text" name="email" id="email" placeholder="Email">
                     <p id="email_valid" class="error_msg" ></p>
                 </td>
             </tr>
@@ -147,6 +147,8 @@
                 return false;
             }
 
+            return true;
+
         }
         function validateName(){
             var name=document.getElementById("name").value;
@@ -179,6 +181,7 @@
                 rePass_p.innerText="Passwords do not match.";
                 return false;
             }
+
             return true;
         }
         function validateEmail(){
@@ -190,6 +193,7 @@
                 email_p.innerText="Please enter a valid email address.";
                 return false;
             }
+
             return true;
         }
         function validatePhoneNumber(){
@@ -212,6 +216,7 @@
                 phone_p.innerText="Please enter a valid 10-digit office phone number.";
                 return false;
             }
+
             return true;
         }
         function validateForm(){

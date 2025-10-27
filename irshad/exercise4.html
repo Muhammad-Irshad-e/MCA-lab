@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(242, 245, 220);
+        }
+        .container
+        {
+            margin: 0 auto;
+            box-shadow: 2px 5px 8px rgba(48, 46, 46,.3);
+            width: fit-content;
+            padding: 30px;
+            border-radius: 12px;
+            background-color: beige;
+        }
+        form input{
+            border-radius: 5px;
+            width: 200px;
+            margin: 10px;
+            height: 30px;
+        }
+        
+        .btn
+        {
+            padding: 30px;
+            padding-left: 50px;
+        }
+        h1
+        {
+            text-align:center ;
+        }
+        #reset,#submit
+        {
+            padding: 5px 10px;
+            width: 100px;
+        }
+        .inside
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Mark Registration</h1>
+    <div class="container">
+
+        <form action="stdInfo.php" method="get">
+            <div class="inside">
+                <div>
+                    Name &nbsp; &nbsp;:<input type="text" name="name"><br>
+                </div>
+                <div>
+                    Roll No : <input type="text" name="rno" id=""><br>
+                </div>
+                <div>
+                    DOB &nbsp;&nbsp;&nbsp;&nbsp;: <input type="date" name="dob"><br>
+                </div>
+                <div>
+                    mark 1 &nbsp;&nbsp;: <input type="number" name="mark1"><br>
+                </div>
+                <div>
+                    mark 2 &nbsp;&nbsp;: <input type="number" name="mark2"><br>
+                </div>
+                <div>
+                    mark 3 &nbsp;&nbsp;: <input type="number" name="mark3"><br>
+                </div>
+                <div class="btn">
+                    <input type="reset" value="Reset" id="reset">
+                    <input type="submit" value="Submit" id="submit">
+                </div>
+            </div>
+            
+            
+        </form>
+    </div>
+</body>
+</html>
