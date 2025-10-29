@@ -31,7 +31,8 @@ Name = input("Enter the name:")
 Account_type = input("Enter the Account Type:")
 
 member = Account(Account_number,Name,Account_type,0)
-
+print("\nAccount Details:")
+member.display()
 
 while True:
     
@@ -43,6 +44,7 @@ while True:
         member.withdraw(int(input("Enter the amount to withdraw:")))
         
     elif transaction == 3:
+         print("Thank you for using our services!")
          exit()      
     else:
         print("Invalid option!!")
