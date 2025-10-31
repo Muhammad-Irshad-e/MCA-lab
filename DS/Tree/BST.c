@@ -1,0 +1,141 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+struct node {
+    int data;
+    struct node *left;
+    struct node *right;
+};
+
+struct node *root = NULL;
+
+
+int display();
+void creation();
+void deletion();
+
+struct node *insertion(struct node *root, struct node *newnode) {
+    if (root == NULL)
+        root = newnode;
+    else if (root->data > newnode->data)
+        root->left = insertion(root->left, newnode);
+    else
+        root->right = insertion(root->right, newnode);
+    return root;
+}
+void creation() {
+    struct node *newnode = (struct node *) malloc(sizeof(struct node));
+    printf("Element: ");
+    scanf("%d", &newnode->data);
+    newnode->left = newnode->right = NULL;
+    root = insertion(root, newnode);
+    display();
+}
+
+
+struct node *find_min(struct node *root) {
+	while (root->left != NULL)
+		root = root->left;
+	return root;
+}
+
+struct node *delete(struct node *root, int value) {
+	if (root == NULL) {
+		printf("Not found!\n");
+		return root;
+	}
+	
+	struct node *temp;
+	if (value < root->data) {
+		root->left = delete(root->left, value);
+	} else if (value > root->data) {
+		root->right = delete(root->right, value);
+	} else {
+		if (root->left == NULL) {
+			temp = root->right;
+			free(root);
+			return temp;
+		} else if (root->right == NULL) {
+			temp = root->left;
+			free(root);
+			return temp;
+		}	
+		root->data = find_min(root->right)->data;
+		root->right = delete(root->right, root->data);
+	}
+	return root;
+}
+
+void deletion() {
+	int value;
+	printf("Enter the node to delete: ");
+	scanf("%d", &value);
+	root = delete(root, value);
+	display();
+}
+
+
+void preOrder(struct node *root) {
+    if (root == NULL)
+        return;
+
+    printf("%d -> ", root->data);
+    preOrder(root->left);
+    preOrder(root->right);
+}
+void inOrder(struct node *root) {
+    if (root == NULL)
+        return;
+
+    inOrder(root->left);
+    printf("%d -> ", root->data);
+    inOrder(root->right);
+}
+void postOrder(struct node *root) {
+    if (root == NULL)
+        return;
+
+    postOrder(root->left);
+    postOrder(root->right);
+    printf("%d -> ", root->data);   
+}
+int display() {
+    if (root == NULL) {
+        printf("Tree is empty!\n");
+        return 1;
+    }
+
+    printf("Preorder: ");
+    preOrder(root);
+    printf("NULL\nInorder: ");
+    inOrder(root);
+    printf("NULL\nPostorder: ");
+    postOrder(root);
+    printf("NULL\n");
+    return 0;
+}
+
+void main()
+{
+    while (1) {
+        int choice;
+        printf("Enter 0 to display, 1 to insert, 2 to delete, 5 to exit: ");
+        scanf("%d", &choice);
+        switch(choice) {
+            case 0:
+		        display();
+                break;
+            case 1:
+                creation();
+                break;
+            case 2:
+                deletion();
+                break;
+            case 5:
+                return;
+            default:
+                break;
+        }
+    }
+}
