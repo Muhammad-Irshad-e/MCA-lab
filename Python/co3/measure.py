@@ -1,7 +1,5 @@
-from graphics import rectangle
-from graphics import circle
-from graphics.graphics3d import cuboid
-from graphics.graphics3d import sphere
+from graphics import rectangle , circle
+from graphics.graphics3d import cuboid , sphere
 
 print("Area of Rectangle with length 5 and breadth 3:", rectangle.area(5, 3))
 print("Perimeter of Rectangle with length 5 and breadth 3:", rectangle.perimeter(5, 3))
