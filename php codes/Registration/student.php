@@ -43,7 +43,7 @@
             $sq = "SELECT Roll_No FROM student where Roll_No = $rno";
             $qu =  mysqli_query($con,$sq);
             if (mysqli_num_rows($qu)>0)
-                echo "<script>alert('Roll NUmber already exist');window.history.back();</script>";
+                echo "<script>alert('Roll Number already exist');window.history.back();</script>";
             else
             {
                 $iq = "INSERT INTO student VALUES ($rno,'$name','$gender',$mark1,$mark2,$total)";
