@@ -126,10 +126,10 @@ int main()
     int value,position;
     do{
 
-        printf("Singly linked list operations \n\n")
-         printf("\n 1.Insert at the Beginning \n 2.Insert at the End\n 3.Insert at Other Positions\n  4.Delete \n 5.display \n 6.exit\n");
-         printf("Choose an option");
-         scanf("%d",&x);
+        printf("Singly linked list operations \n\n");
+        printf("\n 1.Insert at the Beginning \n 2.Insert at the End\n 3.Insert at Other Positions\n  4.Delete \n 5.display \n 6.exit\n");
+        printf("Choose an option");
+        scanf("%d",&x);
         switch(x)
         {
             case 1:

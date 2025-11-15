@@ -7,60 +7,37 @@ struct Node{
     struct Node* NEXT;
 };
 
-struct Node* head=NULL;
+struct Node* top=NULL;
 
 
 void push(int value)
 {
     struct Node* newNode= (struct Node*)malloc(sizeof(struct Node));
     newNode -> DATA = value;
-    newNode -> NEXT = NULL;
+    newNode -> NEXT = top;
+    top = newNode;
+    printf("%d Pushed onto stack\n",value);
 
-    if (head==NULL)
-    {
-        head=newNode;
-
-    }
-    else{
-        struct Node* temp=head;
-        while(temp->NEXT!=NULL){
-
-            temp=temp->NEXT;
-        }
-        temp->NEXT=newNode;
-    }
-    printf("%d Inserted at the REAR",value);
-    
 }
-
 void pop()
 {
-    struct Node* temp=head;
-    struct Node* prev=NULL;
-    int value;
-     if (temp == NULL) {
-        printf("List is empty\n");
+    if (top == NULL) {
+        printf("Stack Underflow\n");
         return;
     }
-    while (temp->NEXT != NULL) {
-        prev = temp;
-        temp = temp->NEXT;
-    }
-    value = temp->DATA;
-    prev->NEXT = temp->NEXT;
+    struct Node* temp = top;
+    top = top->NEXT;
+    printf("%d Popped from stack\n", temp->DATA);
     free(temp);
-    printf("%d deleted\n", value);    
-        
 }
-
 void display() {
-    struct Node* temp = head;
+    struct Node* temp = top;
     if (temp == NULL) {
-        printf("List is empty\n");
+        printf("Stack is empty\n");
         return;
     }
 
-    printf("Linked List: ");
+    printf("Stack (top to bottom): ");
     while (temp != NULL) {
         printf("%d -> ", temp->DATA);
         temp = temp->NEXT;

@@ -29,36 +29,28 @@ void insertRear(int value)
         }
         temp->NEXT=newNode;
     }
-    printf("%d Inserted at the REAR",value);
+    printf("%d Inserted at the Rear of Queue\n",value);
     
 }
-
 void deleteNode()
 {
-    struct Node* temp=head;
-    int value;
-     if (temp == NULL) {
-        printf("List is empty\n");
+    if (head == NULL) {
+        printf("Queue Underflow\n");
         return;
     }
-    else if (temp != NULL ) {
-        value = temp->DATA;
-        head = temp->NEXT;
-        free(temp);
-        printf("%d deleted\n", value);
-        return;
-    }
-        
+    struct Node* temp = head;
+    head = head->NEXT;
+    printf("%d Deleted from Front of Queue\n", temp->DATA);
+    free(temp);
 }
-
 void display() {
     struct Node* temp = head;
     if (temp == NULL) {
-        printf("List is empty\n");
+        printf("Queue is empty\n");
         return;
     }
 
-    printf("Linked List: ");
+    printf("Queue (front to rear): ");
     while (temp != NULL) {
         printf("%d -> ", temp->DATA);
         temp = temp->NEXT;
@@ -83,24 +75,22 @@ int main() {
                     scanf("%d",&value);
                     insertRear(value);
                     break;
-            
+
             case 2:
                     deleteNode();
                     break;
 
             case 3:
-                   
                     display();
                     break;
 
             case 4:
-                    return 0;
-            
+               return 0;
+
             default:
             printf("Invalid Choice\n\n");
 
         }
-       
+
     }while(1);
-    return 0;
 }
