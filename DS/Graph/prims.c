@@ -1,75 +1,61 @@
-#include <stdio.h>
-#include <limits.h>
-
+#include<stdio.h>
+#include<limits.h>
 #define MAX 10
 
-void prims(int graph[MAX][MAX], int n)
+void prims(int cost[MAX][MAX] , int n)
 {
-    int selected[MAX]; // Track selected vertices
-    int no_of_edges = 0;
+    int visited[MAX] = {0};
     int total_cost = 0;
-
-    // Initialize all vertices as not selected
-    for (int i = 0; i < n; i++)
-        selected[i] = 0;
-
-    // Start from vertex 0
-    selected[0] = 1;
-
-    printf("Edge\tWeight\n");
-
-    // Repeat until we have n-1 edges
-    while (no_of_edges < n - 1)
+    int no_of_edges = 0;
+    visited[0] = 1;
+    printf("Edges\tcost\n");
+    while(no_of_edges < n-1)
     {
+        int x = 0 , y = 0;
         int min = INT_MAX;
-        int x = 0, y = 0;
-
-        // Find the smallest edge between a selected and unselected vertex
-        for (int i = 0; i < n; i++)
+        for(int i = 0; i < n; i++)
         {
-            if (selected[i])
+            if(visited[i] == 1)
             {
-                for (int j = 0; j < n; j++)
+                for(int j = 0;j < n; j++)
                 {
-                    if (!selected[j] && graph[i][j] && graph[i][j] < min)
+                    if(!visited[j] && cost[i][j] < min)
                     {
-                        min = graph[i][j];
+                        min = cost[i][j];
                         x = i;
                         y = j;
                     }
                 }
             }
         }
-
-        printf("%d - %d\t%d\n", x + 1, y + 1, graph[x][y]);
-        total_cost += graph[x][y];
-        selected[y] = 1;
+        printf("\n%d->%d\t%d",x+1,y+1,cost[x][y]);
+        visited[y] = 1;
+        total_cost += cost[x][y];
         no_of_edges++;
+
     }
+    printf("\nTotal minimum cost:%d",total_cost);
 
-    printf("Total cost of Minimum Spanning Tree = %d\n", total_cost);
 }
-
 int main()
 {
-    int n;
-    int graph[MAX][MAX];
+    int vertices;
+    int cost[MAX][MAX];
 
-    printf("Enter number of vertices: ");
-    scanf("%d", &n);
-
-    printf("Enter the adjacency matrix (%d x %d):\n", n, n);
-    printf("(Enter 0 if there is no edge between two vertices)\n");
-    for (int i = 0; i < n; i++)
+    printf("Enter the number of vertices:");
+    scanf("%d",&vertices);
+    printf("\nEnter the j cost matrix of (%dx%d)\n",vertices,vertices);
+    for(int i=0;i < vertices; i++)
     {
-        for (int j = 0; j < n; j++)
+        for(int j = 0; j < vertices; j++)
         {
-            scanf("%d", &graph[i][j]);
-            if (graph[i][j] == 0)
-                graph[i][j] = INT_MAX; // Treat 0 as no edge
+            scanf("%d",&cost[i][j]);
+            if(cost[i][j] == 0)
+            {
+                cost[i][j] = INT_MAX;
+            }
         }
     }
-
-    prims(graph, n);
+    prims(cost , vertices);
     return 0;
 }
