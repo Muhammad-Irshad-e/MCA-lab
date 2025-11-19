@@ -30,7 +30,10 @@
         if(isset($_POST['search']))
         {
             $rollno = $_POST['Roll_no'];
-            $n_query = "SELECT * FROM Students WHERE Roll_No = '$rollno'";
+            $n_query ="SELECT Students.Roll_No, Students.Name, Marks.Science, Marks.Maths, Marks.English
+                       FROM Students
+                       JOIN Marks ON Students.Roll_No = Marks.Roll_No
+                       WHERE Students.Roll_No = '$rollno'";
             $res = mysqli_query($con,$n_query);
             
             if(mysqli_num_rows($res)>0)
@@ -38,35 +41,36 @@
                 $n = mysqli_fetch_assoc($res);
                 echo "Name :<input type='text' value='{$n['Name']}' readonly><br>";
                 echo "<input type='hidden' name='Rno' value='{$n['Roll_No']}'>";
-
-            }  
-            
-        }
-        ?>
-     Science : <input type='number'  name='m1' min="0"><br>
-     Maths : <input type='number'  name='m2' min="0"><br>
-     English : <input type='number'  name='m3' min="0"><br>
+                echo "Science : <input type='number'  name='m1' value='{$n['Science']}'><br>";
+                echo "Maths : <input type='number'  name='m2' value='{$n['Maths']}'><br>";
+                echo "English : <input type='number'  name='m3' value='{$n['English']}'><br>";
      
-     <input type="submit" value="Enter" name='Enter'>
-     <?php
-        if(isset($_POST['Enter']))
-        {
-            $rollno = $_POST['Rno'];
-            $science = $_POST['m1'];
-            $maths = $_POST['m2'];
-            $english = $_POST['m3'];
-            $total = $science +$maths +$english;
+                echo "<input type='submit' value='UPDATE' name='update'>";
+    }  
+    
+}
+?>
+<?php
+    if(isset($_POST['update']))
+    {
+        $rollno = $_POST['Rno'];
+        $science = $_POST['m1'];
+        $maths = $_POST['m2'];
+        $english = $_POST['m3'];
+        $total = $science +$maths +$english;
 
-            $u_query = "INSERT INTO marks (Roll_No, Science, Maths, English, Total) VALUES ('$rollno', '$science', '$maths', '$english', '$total')";
-            $res1 = mysqli_query($con,$u_query);
-            if($res1)
-            {                   
-                
-                echo "<script>alert('Mark Entered successfully');</script>";
- 
-            }
+        $u_query = "UPDATE marks 
+                    SET Science = $science, Maths = $maths, English = $english, Total = $total
+                    WHERE Roll_No = $rollno;";
+        $res1 = mysqli_query($con,$u_query);
+        if($res1)
+        {                   
+            
+            echo "<script>alert('Mark Updated successfully');</script>";
+
         }
-    ?>
- </form>
+    }
+?>
+</form>
 </body>
 </html>

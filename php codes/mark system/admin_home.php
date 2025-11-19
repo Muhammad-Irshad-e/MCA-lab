@@ -58,7 +58,7 @@
 
         <!-- Main content -->
         <div class="main_frame">
-            <iframe src="admin_home_content.php" name="main_frame" title="Main Content"></iframe>
+            <iframe src="stdnt_registration.php" name="main_frame" title="Main Content"></iframe>
         </div>
     </div>
 
