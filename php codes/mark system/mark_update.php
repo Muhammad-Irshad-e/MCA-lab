@@ -4,6 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f2f4f7;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Form container */
+form {
+    width: 100%;
+    max-width: 550px; /* Adjusted maximum width */
+    margin: auto;
+    background: white;
+    padding: 35px 45px; /* Increased padding */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Softer shadow */
+    border-radius: 12px;
+}
+
+/* Labels (applied to text output before inputs in the PHP) */
+/* The current PHP structure echoes labels as plain text. This targets that text visually. */
+form label,
+form > div { /* Wrap label text in a div or span in PHP for better CSS targeting if possible */
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+    display: block; /* Ensure it takes its own line */
+    margin-bottom: 5px;
+}
+
+/* Dropdown Styling */
+select {
+    width: 100%; /* Full width for consistency */
+    padding: 12px;
+    margin: 0 0 20px 0;
+    font-size: 15px;
+    border: 1px solid #ccc; /* Lighter default border */
+    border-radius: 6px;
+    box-sizing: border-box;
+    appearance: none; /* Remove default browser styling for a custom look */
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232c3e50%22%20d%3D%22M287%20177.3l-132%20132c-3.6%203.6-7.8%205.4-12.4%205.4s-8.8-1.8-12.4-5.4L5.4%20177.3c-7.2-7.2-7.2-18.7%200-25.9s18.7-7.2%2025.9%200l106%20106%20106-106c7.2-7.2%2018.7-7.2%2025.9%200s7.2%2018.7%200%2025.9z%22%2F%3E%3C%2Fsvg%3E'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px auto;
+    cursor: pointer;
+}
+
+/* Text Fields (Name and Marks) */
+input[type="text"], 
+input[type="number"] {
+    width: 100%; /* Full width for consistency */
+    padding: 12px;
+    font-size: 15px;
+    margin: 0 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus State */
+input[type="text"]:focus, 
+input[type="number"]:focus,
+select:focus {
+    border-color: #2c3e50;
+    box-shadow: 0 0 5px rgba(44, 62, 80, 0.3);
+    outline: none;
+}
+
+/* Readonly Name Field */
+input[readonly] {
+    background-color: #f7f7f7; /* Light gray background for readonly */
+    color: #777;
+    cursor: default;
+}
+
+/* Submit buttons (SEARCH and UPDATE) */
+input[type="submit"] {
+    padding: 12px 25px; /* Consistent padding */
+    background: #2c3e50; /* Dark blue theme color */
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease, transform 0.1s;
+    text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+    background: #1a252f; /* Darker hover state */
+}
+
+input[type="submit"]:active {
+    transform: scale(0.99);
+}
+
+/* Space after Search button - use margin-right for inline elements or convert to block */
+/* Since it's inline in PHP, we'll ensure spacing is clean */
+input[name="search"] {
+    margin-right: 10px;
+}</style>
+
 </head>
 <body>
       <form action="" method="post">

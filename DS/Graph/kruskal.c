@@ -1,27 +1,24 @@
 #include <stdio.h>
-#include <limits.h>  // For INT_MAX
-
+#include <limits.h>  
 #define MAX 30
 
 int parent[MAX];
-int n;               // number of vertices
-int cost[MAX][MAX];  // adjacency matrix
+int n;               
+int cost[MAX][MAX];  
 
-// Find parent
 int find(int i) {
     while (parent[i] != i)
         i = parent[i];
     return i;
 }
 
-// Union
+
 void unionSet(int a, int b) {
     int x = find(a);
     int y = find(b);
     parent[x] = y;
 }
 
-// Kruskal algorithm function
 void kruskal() {
     int edgesUsed = 0;
     int totalCost = 0;
@@ -43,15 +40,14 @@ void kruskal() {
             }
         }
 
-        if (a == -1) break; // No edge left
+        if (a == -1)
+          break; // No edge left
 
-        // Include edge in MST
         printf("%d->%d\t%d\n", a, b, min);
         totalCost += min;
         unionSet(a, b);
         edgesUsed++;
 
-        // Remove edge from consideration
         cost[a][b] = cost[b][a] = INT_MAX;
     }
 
@@ -71,11 +67,10 @@ int main() {
         }
     }
 
-    // Initialize parent array
     for (int i = 1; i <= n; i++)
         parent[i] = i;
 
-    kruskal();  // Call Kruskal's algorithm
+    kruskal();  
 
     return 0;
 }

@@ -4,6 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background: #eef1f6;
+    padding: 40px;
+}
+
+/* Form container */
+form {
+    width: 50%;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+
+/* Dropdown styling */
+select {
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    font-size: 16px;
+    border: 1px solid #777;
+    border-radius: 5px;
+}
+
+/* Text input fields */
+input[type="text"],
+input[type="number"] {
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #666;
+}
+
+/* Submit buttons */
+input[type="submit"] {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+input[type="submit"]:hover {
+    background: #1a252f;
+}
+
+/* Labels */
+label, form {
+    font-size: 18px;
+    font-weight: bold;
+}
+</style>
+
 </head>
 <body>
       <form action="" method="post">
