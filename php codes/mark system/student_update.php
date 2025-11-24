@@ -7,7 +7,7 @@
     <style>
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f6f8; /* Light background */
+    background: #f4f6f8; 
     padding: 50px 20px;
     display: flex;
     justify-content: center;
@@ -15,59 +15,53 @@ body {
     min-height: 100vh;
 }
 
-/* Form container */
 form {
     width: 100%;
-    max-width: 600px; /* Set a maximum width for better control */
+    max-width: 600px; 
     margin: auto;
     background: white;
     padding: 30px 40px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Softer shadow */
-    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+    border-radius: 12px; 
 }
 
-/* Labels */
 form label {
-    display: block; /* Ensures label takes full width */
+    display: block; 
     font-size: 16px;
-    font-weight: 600; /* Bolder font weight */
-    color: #333; /* Darker text */
+    font-weight: 600; 
+    color: #333; 
     margin-bottom: 5px;
 }
 
-/* Inputs, Textarea, and Selects */
 form input[type="text"],
 form input[type="number"],
 form textarea {
     width: 100%;
-    padding: 12px; /* Increased padding */
-    margin: 0 0 20px 0; /* Clearer margin separation */
+    padding: 12px; 
+    margin: 0 0 20px 0; 
     font-size: 15px;
-    border: 1px solid #ccc; /* Lighter default border */
+    border: 1px solid #ccc; 
     border-radius: 6px;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box; 
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Input Focus Effect */
 form input[type="text"]:focus,
 form input[type="number"]:focus,
 form textarea:focus {
-    border-color: #2c3e50; /* Dark header color on focus */
-    box-shadow: 0 0 5px rgba(44, 62, 80, 0.3); /* Subtle blue glow */
-    outline: none; /* Remove default browser outline */
+    border-color: #2c3e50; 
+    box-shadow: 0 0 5px rgba(44, 62, 80, 0.3); 
+    outline: none;
 }
 
-/* Textarea Specifics */
 form textarea {
-    height: 100px; /* Slightly taller textarea */
+    height: 100px; 
     resize: vertical;
 }
 
-/* Submit button */
 input[type="submit"] {
-    padding: 15px 25px; /* More prominent button */
-    background: #2c3e50; /* Dark button color */
+    padding: 15px 25px; 
+    background: #2c3e50; 
     color: white;
     font-size: 16px;
     font-weight: 600;
@@ -81,19 +75,18 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background: #1a252f; /* Darker hover state */
+    background: #1a252f; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 input[type="submit"]:active {
-    transform: scale(0.99); /* Click feedback */
+    transform: scale(0.99); 
 }
 
-/* Headings */
 h2 {
     text-align: center;
     margin-bottom: 25px;
-    color: #2c3e50; /* Use header color for heading */
+    color: #2c3e50; 
     font-size: 24px;
 }
 

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <style>
-        /* Basic page setup */
         body {
             margin: 0;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -18,7 +17,6 @@
             overflow: hidden;
         }
 
-        /* Sidebar (Menu Bar) */
         .menu_bar {
             width: 260px;
             background-color: #1e1f26;
@@ -33,7 +31,6 @@
             background-color: transparent;
         }
 
-        /* Main Content Area */
         .main_frame {
             flex: 1;
             background-color: #fff;
@@ -51,37 +48,45 @@
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar -->
         <div class="menu_bar">
             <iframe src="admin_menu.php" name="admin_menu" title="Menu"></iframe>
         </div>
 
-        <!-- Main content -->
         <div class="main_frame">
             <iframe src="stdnt_registration.php" name="main_frame" title="Main Content"></iframe>
         </div>
     </div>
 
 <?php
+    session_start();
+
+    include 'connection.php';
     if(isset($_POST['submit']))
     {
 
         $user = $_POST['user'];
         $pass = $_POST['pass'];
-        include 'connection.php';
         $s_query = "SELECT `username`, `password` FROM `login` WHERE `username` = '$user' AND `password` = '$pass' ";
         $res = mysqli_query($con,$s_query);
-        
+        $s_query1 =  "SELECT `Roll_No`, `username`, `password` FROM `Students` WHERE `username` = '$user' AND `password` = '$pass' ";
+        $res1 = mysqli_query($con,$s_query1);
         if(mysqli_num_rows($res)==1)
         {   
             $_SESSION['username'] = $user;
            
             echo "<script>alert('Successfully logged in as admin');</script>";    
         }
-        else
+        else if(mysqli_num_rows($res1)>0)
         {
+            $row = mysqli_fetch_assoc($res1);    
+            $_SESSION['username'] = $user;
+            
+            echo "<script>alert('Successfully logged in as Student');</script>";
+            echo "<script>window.location.href='student_view.php?roll={$row['Roll_No']}';</script>";
+            
+        }
+        else{
             echo "<script>alert('Invalid username or password');window.history.back();</script>";
-
 
         }
         

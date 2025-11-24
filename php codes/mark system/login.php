@@ -15,7 +15,6 @@ body {
     margin: 0;
 }
 
-/* Center box */
 .container {
     background: white;
     width: 380px;
@@ -24,12 +23,12 @@ body {
     box-shadow: 0 0 12px rgba(0,0,0,0.18);
 }
 
-/* Input groups */
+/
 .container div {
     margin-bottom: 20px;
 }
 
-/* Labels */
+
 label {
     font-size: 18px;
     font-weight: bold;
@@ -37,7 +36,6 @@ label {
     margin-bottom: 8px;
 }
 
-/* Text input fields */
 input[type="text"], input[type="password"] {
     width: 100%;
     padding: 10px;
@@ -46,7 +44,6 @@ input[type="text"], input[type="password"] {
     border: 1px solid #666;
 }
 
-/* Submit button */
 input[type="submit"] {
     width: 100%;
     padding: 12px;

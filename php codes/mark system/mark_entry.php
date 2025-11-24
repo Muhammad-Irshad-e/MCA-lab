@@ -11,7 +11,6 @@ body {
     padding: 40px;
 }
 
-/* Form container */
 form {
     width: 50%;
     margin: auto;
@@ -21,7 +20,6 @@ form {
     box-shadow: 0 0 12px rgba(0,0,0,0.15);
 }
 
-/* Dropdown styling */
 select {
     width: 60%;
     padding: 10px;
@@ -31,7 +29,6 @@ select {
     border-radius: 5px;
 }
 
-/* Text input fields */
 input[type="text"],
 input[type="number"] {
     width: 60%;
@@ -42,7 +39,6 @@ input[type="number"] {
     border: 1px solid #666;
 }
 
-/* Submit buttons */
 input[type="submit"] {
     background: #2c3e50;
     color: white;
@@ -58,7 +54,6 @@ input[type="submit"]:hover {
     background: #1a252f;
 }
 
-/* Labels */
 label, form {
     font-size: 18px;
     font-weight: bold;

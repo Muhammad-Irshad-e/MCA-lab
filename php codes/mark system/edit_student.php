@@ -15,7 +15,7 @@ body {
     min-height: 100vh;
 }
 
-/* Table styling */
+
 table {
     width: 90%;
     max-width: 1000px;
@@ -28,7 +28,7 @@ table {
     overflow: hidden;
 }
 
-/* Table header */
+
 th {
     background: #2c3e50;
     color: white;
@@ -39,7 +39,6 @@ th {
     letter-spacing: 0.5px;
 }
 
-/* Table cells */
 td {
     padding: 15px 20px;
     font-size: 15px;
@@ -47,30 +46,25 @@ td {
     border-bottom: 1px solid #eee;
 }
 
-/* Remove bottom border from the last row */
 tr:last-child td {
     border-bottom: none;
 }
 
-/* Row hover effect */
 tr:hover td {
     background: #f1f5f9;
     transition: background 0.3s ease;
 }
 
-/* Action column styling */
 td:last-child {
     white-space: nowrap;
 }
 
-/* Buttons container for alignment */
 td:last-child a {
     text-decoration: none;
     margin-right: 5px;
     display: inline-block;
 }
 
-/* Buttons */
 button {
     padding: 10px 14px;
     border: none;
@@ -84,12 +78,10 @@ button {
     letter-spacing: 0.5px;
 }
 
-/* Button active/press effect */
 button:active {
     transform: scale(0.98);
 }
 
-/* Update button */
 td a:first-child button {
     background: #3498db;
 }
@@ -98,7 +90,6 @@ td a:first-child button:hover {
     box-shadow: 0 2px 5px rgba(52, 152, 219, 0.4);
 }
 
-/* Delete button */
 td a:last-child button {
     background: #e74c3c;
 }
@@ -107,7 +98,6 @@ td a:last-child button:hover {
     box-shadow: 0 2px 5px rgba(231, 76, 60, 0.4);
 }
 
-/* No records message */
 td[colspan="5"] {
     text-align: center;
     font-size: 16px;

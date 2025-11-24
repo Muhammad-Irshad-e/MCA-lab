@@ -3,6 +3,5 @@
             // if($con)
             //     echo "Success";
             // else
-            //     echo "Failed to connect to database";
-            
+            //     echo "Failed to connect to database";       
 ?>

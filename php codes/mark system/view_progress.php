@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-/* Page Background */
 body {
     font-family: Arial, sans-serif;
     background: #f4f6f8;
     padding: 20px;
 }
 
-/* Form Container */
 form {
     width: 50%;
     margin: auto;
@@ -22,12 +20,10 @@ form {
     border-radius: 10px;
 }
 
-/* Labels */
 form label, form select, form input {
     font-size: 18px;
 }
 
-/* Dropdown Styling */
 select {
     width: 60%;
     padding: 10px;
@@ -37,7 +33,6 @@ select {
     border: 1px solid #666;
 }
 
-/* Submit Button */
 input[type="submit"] {
     padding: 10px 20px;
     background: #2c3e50;
@@ -53,7 +48,6 @@ input[type="submit"]:hover {
     background: #1a252f;
 }
 
-/* Table Styling */
 table {
     width: 60%;
     margin: 25px auto;
@@ -84,7 +78,6 @@ table tr:hover td {
     background: #cfe0eb;
 }
 
-/* Link Styling */
 a {
     display: block;
     width: fit-content;
